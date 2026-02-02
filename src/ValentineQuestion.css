@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  overflow: hidden; /* Чтобы конфетти не вызывало скролл */
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999; /* Поверх всего */
+  pointer-events: none; /* Чтобы не блокировал клики */
+}
+
+main {
+  position: relative;
+  z-index: 1; /* Чтобы был под конфетти */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex; /* Для центрирования содержимого */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 350px;
+}
+
+h1 {
+  color: #ff7aa2;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.button-zone {
+  position: relative;
+  width: 300px; /* Задайте размер зоны для кнопок */
+  height: 100px;
+  margin: 30px auto;
+}
+
+button {
+  position: absolute;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s linear;
+  white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+#yesBtn {
+  background-color: #a8e6cf;
+  color: #333;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(1); /* Начальное положение */
+  top: 50%;
+}
+
+#yesBtn:hover {
+  background-color: #8cd9b6;
+}
+
+#noBtn {
+  background-color: #ff7aa2;
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%); /* Начальное положение */
+}
+
+#noBtn:hover {
+  background-color: #e66d8b;
+}
+
+.hint {
+  margin-top: 20px;
+  color: #888;
+  font-style: italic;
+  /* display: none; */ /* В React управляем видимостью через условный рендеринг */
+}
+
+.result {
+  /* display: none; */ /* В React управляем видимостью через условный рендеринг */
+  margin-top: 30px;
+}
+
+.result h2 {
+  color: #ff7aa2;
+  font-size: 3em;
+}
+
+.fireworks {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* SVG Heart positioning */
+svg {
+  position: absolute;
+  top: 20px; /* Отступ сверху */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px; /* Размер сердца */
+  height: 50px;
+  overflow: visible;
+  z-index: 2; /* Чтобы быть над основным контентом, но под конфетти */
+}
