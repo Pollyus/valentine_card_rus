@@ -36,7 +36,7 @@ jobs:
       - name: Upload build folder for Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./build
+          path: ./build/
 
   deploy:
     needs: build
